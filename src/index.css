@@ -11,25 +11,39 @@ html {
 }
 
 .app {
+  background-image: linear-gradient(to bottom, rgba(67, 172, 206, 1), rgba(99, 177, 208, 1));
+
+  /*
   background-image: url("./assets/cold-bg.jpg");
   background-size: cover;
-  background-position: bottom;
-  transition: 0.4s ease-out;
+  background-position: bottom;*/
+  transition: 2s ease-out;
 }
 
 .app.warm {
-  background-image: url("./assets/warm-bg.jpg");
+  background-image: linear-gradient(to bottom, rgba(221, 177, 121, 1), rgba(229, 159,133, 1));
+  /*background-image: url("./assets/warm-bg.jpg");*/
+  transition: 2s ease-out;
+}
+
+.app.normal {
+  background-image: linear-gradient(to bottom, rgba(45, 81, 113, 0.7), rgba(71, 66, 122, 1));
 }
 
 main {
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.75));
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.2));
   padding: 2.5rem;
 }
 
 .search-box {
   width: 100%;
-  margin: 0 0 7rem;
+  margin: 0 0 2rem;
+}
+@media (min-width: 768px) {
+  .search-box {
+    padding: 0 10%;
+  }
 }
 
 .search-box .search-bar{
@@ -42,10 +56,10 @@ main {
   border: none;
   outline: none;
 
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.2);
   border-radius: 2.5rem;
 
-  box-shadow: 0rem 0.6rem rgba(0,0,0,0.2);
+  box-shadow: 0.2rem 0.3rem rgba(0,0,0,0.2);
 
   color: #313131;
   font-size: 2rem;
@@ -53,23 +67,25 @@ main {
   transition: 0.4s ease;
 }
 .search-box .search-bar:focus {
-  background-color: rgba(255,255,255,0.75);
+  background-color: rgba(255,255,255,0.3);
 }
 
-.location-box .location {
-  color: #FFF;
-  font-size: 3.2rem;
-  font-weight: 500;
-  text-align: center;
-
-  text-shadow: 0.3rem 0.3rem rgba(50,50,70,0.5);
-}
-
-.location-box .date {
+.location-box .date, .location {
   color: #FFF;
   font-size: 2rem;
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 100;
+  /*font-style: italic;*/
+  text-align: center;
+
+  text-shadow: 0rem 0.2rem rgba(20, 20, 20, 1);
+}
+
+.location-box .hour {
+  color: #FFF;
+  font-size: 4rem;
+  font-weight: 200;
+  padding: 1rem 0;
+  /*font-style: italic;*/
   text-align: center;
 
   text-shadow: 0.2rem 0.2rem rgba(50, 50, 70, 0.5);
@@ -79,29 +95,79 @@ main {
   text-align: center;
 }
 
-.weather-box .temp {
-  position: relative;
-  display: inline-block;
-  margin: 3rem auto;
-  background-color: rgba(255,255,255,0.2);
-  border-radius: 2.6rem;
+.weather-box .img{
+  width: 20rem;
+  padding: 2rem 0 0 0;
+}
 
-  padding: 1.5rem 2.5rem;
+.weather-box .temp {
+  
+  margin: 0;
 
   color: #FFF;
-  font-size: 10.2rem;
-  font-weight: 900;
+  font-size: 10rem;
+  font-weight: 100;
+
+  text-shadow: 0rem 0.4rem rgba(50, 50, 70, 0.5);
+  text-align: center;
+  }
+
+.weather-box .weather {
+  color: #FFF;
+  font-size: 4.8rem;
+  font-weight: 100;
+  text-align: center;
 
   text-shadow: 0.3rem 0.3rem rgba(50, 50, 70, 0.5);
+}
+
+.info {
+  color: #FFF;
+  font-size: 4rem;
+  font-weight: 500;
+  /*font-style: italic;*/
   text-align: center;
-  box-shadow: 0.4rem 0.6rem rgba(0, 0, 0, 0.2);
+
+  text-shadow: 0.2rem 0.2rem rgba(50, 50, 70, 0.5);
+}
+.img-info {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 22rem;
+  padding: 5rem 0;
+}
+
+@media (min-width: 768px) {
+  .box {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 15rem;
+  }
+  .location-box {
+    flex: 50%;
+    padding: 20rem 0;
+  }
+  .location-box .date,
+  .location {
+    font-size: 3rem;
   }
 
-  .weather-box .weather {
-    color: #FFF;
-    font-size: 4.8rem;
-    font-weight: 700;
-    text-align: center;
-
-    text-shadow: 0.3rem 0.3rem rgba(50, 50, 70, 0.5);
+  .location-box .hour {
+    font-size: 8rem;
   }
+  .weather-box {
+    flex: 50%;
+  }
+  .weather-box .img {
+    width: 30rem;
+    padding: 2rem 0 0 0;
+  }
+  .img-info {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 32rem;
+    padding: 5rem 0;
+  }
+}
