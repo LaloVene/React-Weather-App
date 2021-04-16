@@ -1,5 +1,7 @@
 # Weather App using React
 
+Created a weather app to learn API calls and React.
+
 [App Link](https://angry-euclid-676ad0.netlify.app/)
 
 ![image](https://user-images.githubusercontent.com/54692916/114968443-f5430000-9e3b-11eb-9d65-1b762108e1c3.png)
